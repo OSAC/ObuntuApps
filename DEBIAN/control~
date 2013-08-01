@@ -1,0 +1,11 @@
+Package: osac-pack
+Version: 0.0.2
+Architecture: i386
+Maintainer: <ansbhandari@gmail.com>, <lts2gthr@gmail.com>, <bidaribishnu7@gmail.com>
+Installed-Size: 1160
+Section: admin
+Description: Collection of tiny CUI programs. Like o-copy,o-hide, o-encrypt, o-notice, o-prime. . .
+Homepage: www.osacascol.blogspot.com
+Origin: Obuntu
+
+
