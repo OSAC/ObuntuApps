@@ -5,9 +5,11 @@ ObuntuApps
 -> These are included in the Obuntu, a customized Ubuntu distro.
 -> Obuntu contains some useful apps for programmers and some apps developed for fun as well.
 ```
+####Use o-\<tab\> to view all the executables.
+==============================================
 
 ##Useful Commands
-===============
+=================
 ```bash
 make            # to make all the executables required.
 make clean      # to remove all the executables.
