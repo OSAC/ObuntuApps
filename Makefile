@@ -1,7 +1,8 @@
 #root directory for src and bin
-SRC_ROOT=./osac-pack/usr/share/doc
-BIN_ROOT=./osac-pack/usr/bin
-MAN_ROOT=usr/share/man/man1
+SRC_ROOT=./usr/share/src
+BIN_ROOT=./usr/bin
+MAN_ROOT=./usr/share/man/man1
+all:o-copy o-encrypt o-hide o-notice o-prime
 o-copy:
 	gcc $(SRC_ROOT)/o-copy/o-copy.c -o $(BIN_ROOT)/o-copy
 	gcc $(SRC_ROOT)/o-copy/o-cut.c -o $(BIN_ROOT)/o-cut
@@ -14,13 +15,13 @@ o-notice:
 	gcc $(SRC_ROOT)/o-notice/o-notice.c -o $(BIN_ROOT)/o-notice
 o-prime:
 	gcc $(SRC_ROOT)/o-prime/o-prime.c -o $(BIN_ROOT)/o-prime -lm
-
-deb: o-prime o-notice o-hide o-encrypt o-copy
-	dpkg-deb -b osac-pack osac-pack.deb
+clean:
+	rm -rf ./osac-pack.deb
+	rm -rf ./usr/bin/*
 install:
 	cp $(BIN_ROOT)/* /usr/bin/
-	cp ./osac-pack/$(MAN_ROOT)/* /$(MAN_ROOT)/
-clean:
+	cp $(MAN_ROOT)/* /usr/share/man/man1/
+uninstall:
 	rm /usr/bin/o-prime
 	rm /usr/bin/o-notice
 	rm /usr/bin/o-hide
@@ -31,3 +32,10 @@ clean:
 	rm /$(MAN_ROOT)/o-*
 	rm /$(MAN_ROOT)/obunt*
 	rm /$(MAN_ROOT)/osac*
+deb:
+	make
+	mkdir ./osac-pack
+	cp -r ./DEBIAN ./osac-pack/
+	cp -r ./usr ./osac-pack/
+	dpkg -b ./osac-pack/
+	rm -rf ./osac-pack/
