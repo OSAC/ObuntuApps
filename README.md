@@ -5,7 +5,7 @@ ObuntuApps
 -> These are included in the Obuntu, a customized Ubuntu distro.
 -> Obuntu contains some useful apps for programmers and some apps developed for fun as well.
 ```
-####Use o-\<tab\> to view all the executables.
+####Use o-\<tab\> to view all the executables. And ask `man` to know what they do.
 ==============================================
 
 ##Useful Commands
